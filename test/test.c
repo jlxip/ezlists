@@ -6,6 +6,7 @@ int main() {
 	printf("\n");
 
 	Ezlist start = ezlnew();
+
 	for(int i=0; i<10; i++) {
 		ezlpush(start, i);
 		printf("%d\n", ezlgetl(start));
