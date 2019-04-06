@@ -19,13 +19,13 @@ int main() {
 		ezladdb(test2, i);
 		printf("%d ", ezlgetf(test2));
 	}
-	printf("\n\n");
-
-
-	for(int i=0; i<10; i++) printf("%d ", ezlget(test1, i));
 	printf("\n");
-	for(int i=0; i<10; i++) printf("%d ", ezlget(test2, i));
-	printf("\n\n");
+
+	ezladd(test1, -1, 0);	// Should do absolutely nothing
+	ezladd(test1, 123, 0);	// The same
+	ezladd(test1, 1, 0);
+	for(int i=0; i<ezlgetsize(test1); i++) printf("%d ", ezlget(test1, i));
+	printf("\n\n\n");
 
 
 	printf("All tests finished.\n\n");

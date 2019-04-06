@@ -12,5 +12,6 @@ int ezlgetl(Ezlist start);
 int ezlgetf(Ezlist start);
 int ezlgetsize(Ezlist start);
 int ezlget(Ezlist start, int index);
+void ezladd(Ezlist start, int index, int value);
 
 #endif

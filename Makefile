@@ -3,7 +3,7 @@ all: build/libezlists.so
 build/libezlists.so: obj/ezlists.o
 	tcc obj/ezlists.o -o build/libezlists.so -shared
 
-obj/ezlists.o: src/ezlists.asm
+obj/ezlists.o: src/*.asm
 	nasm src/ezlists.asm -o obj/ezlists.o -f elf64
 
 install: build/libezlists.so
