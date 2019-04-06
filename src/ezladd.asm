@@ -13,6 +13,7 @@ ezladd:
 	call ezladdb
 	ret
 	.keepgoing:
+	
 	; If the index is the size, call ezlpush.
 	; If it's greater, do nothing.
 	mov eax, dword [rdi+16]

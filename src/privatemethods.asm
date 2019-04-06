@@ -3,7 +3,7 @@ ezlalloc:
 	; 4 bytes -> integer
 	; 8 bytes -> next node
 	mov edi, 12
-	call malloc
+	call malloc WRT ..plt
 
 	; Fill the next address with zeros.
 	; There's no need to clear the value, as it will be set later.
@@ -11,7 +11,7 @@ ezlalloc:
 	ret
 
 ; Gets the address of the n-th node.
-; If the n-th node doesn't exists, returns 0.
+; If the n-th node doesn't exist, returns 0.
 ; It is assumed:
 ; 	rdi = list
 ; 	esi = index

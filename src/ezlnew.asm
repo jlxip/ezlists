@@ -4,7 +4,7 @@ ezlnew:
 	; 8 bytes -> end
 	; 4 bytes -> size
 	mov edi, 20
-	call malloc
+	call malloc WRT ..plt
 
 	; Again, fill with zeros.
 	mov qword [rax], 0

@@ -1,9 +1,9 @@
 BITS 64
-
 section .text
 
 ; EXTERNAL METHODS
 extern malloc
+extern free
 
 ; DEFINITIONS
 global ezlnew:function
@@ -14,6 +14,10 @@ global ezlgetf:function
 global ezlgetsize:function
 global ezlget:function
 global ezladd:function
+global ezlwipef:function
+global ezlwipel:function
+global ezlwipe:function
+global ezlwipeall:function
 
 ; METHODS
 %include 'src/privatemethods.asm'
@@ -25,3 +29,7 @@ global ezladd:function
 %include 'src/ezlgetsize.asm'
 %include 'src/ezlget.asm'
 %include 'src/ezladd.asm'
+%include 'src/ezlwipef.asm'
+%include 'src/ezlwipel.asm'
+%include 'src/ezlwipe.asm'
+%include 'src/ezlwipeall.asm'
