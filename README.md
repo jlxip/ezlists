@@ -42,7 +42,7 @@ This will compile and link the library (with TCC by default, but you can change 
 
 ## Example
 A simple example could be the following:
-```
+```C
 #include <stdio.h>
 #include <ezlists.h>
 #include <stdlib.h>
