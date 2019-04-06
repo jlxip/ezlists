@@ -2,7 +2,7 @@
 A small but complete linked lists library made in assembly.
 
 ## Introduction
-**ezlists** is a library which helps you using linked lists.
+**ezlists** is a library which lets you use linked lists in an intuitive way.
 
 It is written in x86_64 assembly, so that the performance is optimal.
 
