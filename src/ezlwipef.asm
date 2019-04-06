@@ -1,10 +1,12 @@
 ; Frees the first node.
 ; rdi -> list
 ezlwipef:
+	call saveRegisters
 	; Get the first node and check it exists.
 	mov rax, qword [rdi]
 	test rax, rax
 	jnz .keepgoing
+	call restoreRegisters
 	ret
 	.keepgoing:
 
@@ -35,4 +37,5 @@ ezlwipef:
 
 	; Decrement the size
 	dec dword [rdi+16]
+	call restoreRegisters
 	ret

@@ -18,6 +18,10 @@ global ezlwipef:function
 global ezlwipel:function
 global ezlwipe:function
 global ezlwipeall:function
+global ezl2arr:function
+global ezl2arrw:function
+global arr2ezl:function
+global arr2ezlw:function
 
 ; METHODS
 %include 'src/privatemethods.asm'
@@ -33,3 +37,7 @@ global ezlwipeall:function
 %include 'src/ezlwipel.asm'
 %include 'src/ezlwipe.asm'
 %include 'src/ezlwipeall.asm'
+%include 'src/ezl2arr.asm'
+%include 'src/ezl2arrw.asm'
+%include 'src/arr2ezl.asm'
+%include 'src/arr2ezlw.asm'

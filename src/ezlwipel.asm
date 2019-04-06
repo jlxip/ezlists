@@ -5,10 +5,12 @@
 ; Frees the last node.
 ; rdi -> list
 ezlwipel:
+	call saveRegisters
 	; Get the last node and check it exists.
 	mov rax, qword [rdi+8]
 	test rax, rax
 	jnz .keepgoing
+	call restoreRegisters
 	ret
 	.keepgoing:
 
@@ -18,6 +20,7 @@ ezlwipel:
 	cmp rax, rbx
 	jnz .keepgoing2
 	call ezlwipef
+	call restoreRegisters
 	ret
 	.keepgoing2:
 
@@ -41,4 +44,5 @@ ezlwipel:
 
 	; Decrement the size
 	dec dword [rdi+16]
+	call restoreRegisters
 	ret

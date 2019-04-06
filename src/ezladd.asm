@@ -3,6 +3,7 @@
 ; esi = index
 ; edx = value
 ezladd:
+	call saveRegisters
 	; Check if the index is valid.
 	; If it's 0, we just call ezladdb.
 	; If it's lower, do nothing.
@@ -11,9 +12,10 @@ ezladd:
 	jnz .keepgoing
 	mov esi, edx
 	call ezladdb
+	call restoreRegisters
 	ret
 	.keepgoing:
-	
+
 	; If the index is the size, call ezlpush.
 	; If it's greater, do nothing.
 	mov eax, dword [rdi+16]
@@ -22,9 +24,11 @@ ezladd:
 	jnz .keepgoing2
 	mov esi, edx
 	call ezlpush
+	call restoreRegisters
 	ret
 
 	.donothing:
+		call restoreRegisters
 		ret
 	.keepgoing2:
 
@@ -54,4 +58,5 @@ ezladd:
 
 	; Increment the size
 	inc dword [rdi+16]
+	call restoreRegisters
 	ret

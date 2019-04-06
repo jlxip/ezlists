@@ -2,6 +2,7 @@
 ; rdi -> list
 ; esi -> index
 ezlwipe:
+	call saveRegisters
 	; Check if the index is valid.
 	; If it's zero, call "ezlwipef", which will manage the pointers in the list itself.
 	; If it's lower, do nothing at all.
@@ -9,6 +10,7 @@ ezlwipe:
 	jl .donothing
 	jnz .keepgoing
 	call ezlwipef
+	call restoreRegisters
 	ret
 	.keepgoing:
 
@@ -17,6 +19,7 @@ ezlwipe:
 	cmp esi, eax
 	jl .keepgoing2
 	.donothing:
+		call restoreRegisters
 		ret
 	.keepgoing2:
 
@@ -25,6 +28,7 @@ ezlwipe:
 	cmp esi, eax
 	jnz .keepgoing3
 	call ezlwipel
+	call restoreRegisters
 	ret
 	.keepgoing3:
 
@@ -49,4 +53,5 @@ ezlwipe:
 	; Decrement the size.
 	pop rdi
 	dec dword [rdi+16]
+	call restoreRegisters
 	ret

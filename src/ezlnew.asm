@@ -1,5 +1,6 @@
 ; Creates a new list.
 ezlnew:
+	call saveRegisters
 	; 8 bytes -> start
 	; 8 bytes -> end
 	; 4 bytes -> size
@@ -10,4 +11,5 @@ ezlnew:
 	mov qword [rax], 0
 	mov qword [rax+8], 0
 	mov dword [rax+16], 0
+	call restoreRegisters
 	ret

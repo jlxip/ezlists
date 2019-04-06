@@ -1,5 +1,6 @@
 ; Adds a new node at the beginning of the list.
 ezladdb:
+	call saveRegisters
 	; Create a new node.
 	push rsi
 	push rdi
@@ -23,4 +24,5 @@ ezladdb:
 	.keepgoing:
 
 	inc dword [rdi+16]
+	call restoreRegisters
 	ret

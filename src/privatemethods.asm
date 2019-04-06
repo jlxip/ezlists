@@ -46,3 +46,22 @@ ezlgetaddr:
 		jmp .L
 	.L_end:
 	ret
+
+; Saves all the registers but "rax", which is often use to return values.
+saveRegisters:
+	pop r9
+	push rsi
+	push rdi
+	push rdx
+	push rcx
+	push rbx
+	jmp r9
+
+restoreRegisters:
+	pop r9
+	pop rbx
+	pop rcx
+	pop rdx
+	pop rdi
+	pop rsi
+	jmp r9

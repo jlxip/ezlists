@@ -17,15 +17,10 @@ uninstall:
 	sudo rm /usr/lib/libezlists.so
 	sudo rm /usr/include/ezlists.h
 
-test_compile: install
+test: install
 	$(COMPILER) test/test.c -o test/test -lezlists
-test_no_remove: test_compile
-	test/test
-test: test_no_remove
-	rm test/test
-valgrind: test_compile
 	valgrind --leak-check=full test/test
-
+	rm test/test
 
 clean:
 	rm obj/*.o build/*.so

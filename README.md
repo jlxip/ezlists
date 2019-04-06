@@ -1,6 +1,4 @@
 # ezlists
 A tiny linked lists library made in assembly.
 
-## TODO
-+ **ezl2array**
-+ **array2ezl**
+## I'll write this in the next commit.
