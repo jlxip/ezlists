@@ -4,7 +4,7 @@ A small but complete linked lists library made in assembly.
 ## Introduction
 **ezlists** is a library which lets you use linked lists in an intuitive way.
 
-It is written in x86_64 assembly, so that the performance is optimal.
+It is written in x86_64 assembly, so that the performance is optimal. You **can't** go faster than this.
 
 It's tiny: 4KB when compiled using *tcc*. However, it has a pretty decent set of methods that will eventually come handy at a given moment.
 
@@ -33,7 +33,7 @@ This will compile and link the library (with TCC by default, but you can change 
 | `ezlget` | (`Ezlist`) list, (`int`) index | (`int`) value | Returns the value of the node at a given position. |
 | `ezlwipef` | (`Ezlist`) list | Nothing | Deletes and frees the first node. |
 | `ezlwipel` | (`Ezlist`) list | Nothing | Deletes and frees the last node. |
-| `ezlwipe` | (`Ezlist`) list, (int) index | Nothing | Deletes and frees the node at a given position. |
+| `ezlwipe` | (`Ezlist`) list, (`int`) index | Nothing | Deletes and frees the node at a given position. |
 | `ezlwipeall` | (`Ezlist`) list | Nothing | Deletes and frees all the nodes as well as the list itself. |
 | `ezl2arr` | (`Ezlist`) list | (`int*`) array | Creates an array with the elements of a list. |
 | `ezl2arrw` | (`Ezlist`) list | (`int*`) array | Same as above but also wipes the list. |
